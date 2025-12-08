@@ -49,18 +49,6 @@ declare(strict_types=1) ?>
     			<!-- /wp:paragraph -->
     		</div>
     		<!-- /wp:group -->
-
-    		<!-- wp:buttons -->
-    		<div class="wp-block-buttons">
-    			<!-- wp:button {"textColor":"base","style":{"border":{"width":"2px"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"borderColor":"base","className":"is-style-outline"} -->
-    			<div class="wp-block-button is-style-outline">
-    				<a class="wp-block-button__link has-base-color has-text-color has-link-color has-border-color has-base-border-color wp-element-button" style="border-width:2px">
-    				<?php echo esc_html__("Get Directions", "olivaint"); ?>
-    				</a>
-    			</div>
-    			<!-- /wp:button -->
-    		</div>
-    		<!-- /wp:buttons -->
     	</div>
     	<!-- /wp:column -->
 
@@ -108,31 +96,15 @@ declare(strict_types=1) ?>
     <div class="wp-block-group alignwide">
     	<!-- wp:social-links {"iconColor":"base","iconColorValue":"#064626","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}},"className":"is-style-logos-only"} -->
     	<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
-    		<!-- wp:social-link {"url":"https://facebook.com/","service":"facebook"} /-->
+    		<!-- wp:social-link {"url":"https://www.facebook.com/OlivaintBE","service":"facebook"} /-->
 
-    		<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /-->
+    		<!-- wp:social-link {"url":"https://www.instagram.com/olivaint_be/","service":"instagram"} /-->
 
-    		<!-- wp:social-link {"url":"https://tiktok.com/","service":"tiktok"} /-->
+    		<!-- wp:social-link {"url":"https://www.linkedin.com/school/conf%C3%A9rence-olivaint-genootschap","service":"linkedin"} /-->
 
-    		<!-- wp:social-link {"url":"https://tumblr.com/","service":"tumblr"} /-->
+    		<!-- wp:social-link {"url":"https://www.youtube.com/channel/UCA6152emRJtr1Pn6apwRleA","service":"youtube"} /-->
     	</ul>
     	<!-- /wp:social-links -->
-
-    	<!-- wp:paragraph {"fontSize":"x-small"} -->
-    	<p class="has-x-small-font-size">
-    		<?php
-      /* Translators: WordPress link. */
-      $wordpress_link =
-          '<a href="' .
-          esc_url(__("https://wordpress.org", "olivaint")) .
-          '" rel="nofollow">WordPress</a>';
-      echo sprintf(
-          esc_html__('Designed with %1$s', "olivaint"),
-          $wordpress_link,
-      );
-      ?>
-    	</p>
-    	<!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 </div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Page with Table of Contents
- * Slug: kentwood/page-with-toc
+ * Slug: olivaint/page-with-toc
  * Categories: featured, text
  */
 
@@ -19,7 +19,7 @@ declare( strict_types = 1 );
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|40"},"border":{"radius":"14px"},"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|base"}}}}},"backgroundColor":"primary","textColor":"base","className":"has-base-color has-primary-background-color has-text-color has-background has-link-color","layout":{"type":"flex","orientation":"vertical"}} -->
 				<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background has-link-color" style="border-radius:14px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 					<!-- wp:paragraph {"fontSize":"large"} -->
-					<p class="has-large-font-size"><?php echo esc_html__( 'Contents', 'kentwood' ); ?></p>
+					<p class="has-large-font-size"><?php echo esc_html__( 'Contents', 'olivaint' ); ?></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:table-of-contents {"onlyIncludeCurrentPage":true,"fontSize":"small"} /-->

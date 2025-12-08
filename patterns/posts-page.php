@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts Page
- * Slug: kentwood/posts-page
+ * Slug: olivaint/posts-page
  * Categories: featured, posts
  */
 

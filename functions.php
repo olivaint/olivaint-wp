@@ -1,43 +1,43 @@
 <?php
 /**
- * Kentwood functions and definitions
+ * Olivaint (Kentwood) functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Kentwood
- * @since Kentwood 1.0
+ * @package Olivaint
+ * @since Olivaint 1.1
  */
 
 declare( strict_types = 1 );
 
-if ( ! function_exists( 'kentwood_support' ) ) :
+if ( ! function_exists( 'olivaint_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Kentwood 1.0
+	 * @since Olivaint 1.1
 	 *
 	 * @return void
 	 */
-	function Kentwood_support() {
+	function olivaint_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'kentwood' );
+		load_theme_textdomain( 'olivaint' );
 	}
 
 endif;
 
-add_action( 'after_setup_theme', 'kentwood_support' );
+add_action( 'after_setup_theme', 'olivaint_support' );
 
-if ( ! function_exists( 'kentwood_styles' ) ) :
+if ( ! function_exists( 'olivaint_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Kentwood 1.0
+	 * @since Olivaint 1.1
 	 *
 	 * @return void
 	 */
@@ -45,20 +45,17 @@ if ( ! function_exists( 'kentwood_styles' ) ) :
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'kentwood-style',
+			'olivaint-style',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'kentwood-style' );
+		wp_enqueue_style( 'olivaint-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'kentwood_styles' );
-
-
-
+add_action( 'wp_enqueue_scripts', 'olivaint_styles' );

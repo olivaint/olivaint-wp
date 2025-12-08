@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Recent Posts
- * Slug: kentwood/recent-posts
+ * Slug: olivaint/recent-posts
  * Categories: featured, posts
  */
 
@@ -11,13 +11,13 @@ declare( strict_types = 1 );
 <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide">
 	<!-- wp:heading {"align":"wide","fontSize":"xx-large"} -->
-	<h2 class="wp-block-heading alignwide has-xx-large-font-size"><?php echo esc_html__( 'Recent Highlights', 'kentwood' ); ?></h2>
+	<h2 class="wp-block-heading alignwide has-xx-large-font-size"><?php echo esc_html__( 'Recent Highlights', 'olivaint' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:0">
 		<!-- wp:paragraph -->
-		<p><a href="#"><?php echo esc_html__( 'See More&rarr;', 'kentwood' ); ?></a></p>
+		<p><a href="#"><?php echo esc_html__( 'See More&rarr;', 'olivaint' ); ?></a></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

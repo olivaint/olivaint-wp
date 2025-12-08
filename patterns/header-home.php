@@ -34,9 +34,7 @@ declare(strict_types=1) ?>
             <div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)">
                 <!-- wp:site-logo {"width":186} /-->
 
-                <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontStyle":"normal","lineHeight":"1"}},"fontSize":"xxx-large"} -->
-                <h1 class="wp-block-heading has-text-align-center has-xxx-large-font-size" style="font-style:normal;line-height:1">Olivaint Conference of Belgium</h1>
-                <!-- /wp:heading -->
+                <!-- wp:site-title {"level":1,"textAlign":"center","style":{"typography":{"textTransform":"none","fontWeight":"600"}},"fontSize":"xxx-large","fontFamily":"playfair-display-sc"} /-->
 
                 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"600"}},"fontSize":"x-large","fontFamily":"playfair-display"} -->
                 <p class="has-playfair-display-font-family has-x-large-font-size" style="font-style:italic;font-weight:600">Royal Association</p>

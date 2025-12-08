@@ -33,7 +33,7 @@ declare(strict_types=1) ?>
     	<!-- wp:column -->
     	<div class="wp-block-column">
     		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"},"typography":{"lineHeight":"1"}},"fontSize":"x-small","layout":{"type":"flex","orientation":"vertical"}} -->
-    		<div class="wp-block-group"has-x-small-font-size" style="line-height:1">
+    		<div class="wp-block-group has-x-small-font-size" style="line-height:1">
     			<!-- wp:paragraph -->
     			<p><?php echo esc_html__("Rue d'Egmont, 11", "olivaint"); ?></p>
     			<!-- /wp:paragraph -->

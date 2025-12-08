@@ -28,15 +28,11 @@ declare(strict_types=1) ?>
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"style":{"spacing":{"blockGap":"22px","padding":{"top":"var(--wp--preset--spacing--50)","bottom":"var(--wp--preset--spacing--50)"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-        <div class="wp-block-group">
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)"><!-- wp:site-logo {"width":100,"shouldSyncIcon":false} /-->
 
-            <!-- wp:site-logo {"width":100,"shouldSyncIcon":false} /-->
-
-            <!-- wp:group {"style":{"spacing":{"blockGap":"var(--wp--preset--spacing--30)"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
-            <div class="wp-block-group">
-
-                <!-- wp:site-title {"level":0,"textAlign":"center","style":{"typography":{"textTransform":"none","fontWeight":"600"}},"fontSize":"x-large","fontFamily":"playfair-display-sc"} /-->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dspacing\u002d\u002d30)"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left"}} -->
+            <div class="wp-block-group"><!-- wp:site-title {"level":0,"textAlign":"center","style":{"typography":{"textTransform":"none","fontWeight":"700","fontStyle":"normal"}},"fontSize":"x-large","fontFamily":"playfair-display-sc"} /-->
 
                 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"italic","fontWeight":"600"}},"fontSize":"large","fontFamily":"playfair-display"} -->
                 <p class="has-playfair-display-font-family has-large-font-size" style="font-style:italic;font-weight:600;line-height:1">Royal Association</p>

@@ -8,8 +8,8 @@
 declare( strict_types = 1 );
 ?>
 
-<!-- wp:columns {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":{"left":"0"}},"color":{"background":"#020048"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<div class="wp-block-columns alignfull has-base-color has-text-color has-background has-link-color" style="background-color:#020048;margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<!-- wp:columns {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":{"left":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"primary","textColor":"base"} -->
+<div class="wp-block-columns alignfull has-base-color has-primary-background-color has-text-color has-background has-link-color" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 	<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">	<!-- wp:image {"sizeSlug":"full","style":{"color":[]}} -->
 		<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/example.webp" alt="<?php echo esc_attr_e( 'A side view of a statue in a library.', 'olivaint' ); ?>" class=""/></figure>

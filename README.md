@@ -13,8 +13,8 @@
 ## Description
 
 This theme based on Kentwood, a theme originally designed for learning institutions. This version is a customized fork adapted and republished by the **Olivaint Conference of Belgium**, in accordance with the GPL license.
-**Original Contributor:** Automattic
-**Original Source:** https://wordpress.com/theme/kentwood
+- **Original Contributor:** Automattic
+- **Original Source:** https://wordpress.com/theme/kentwood
 
 ---
 

@@ -41,7 +41,7 @@ if ( ! function_exists( 'olivaint_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function Kentwood_styles() {
+	function olivaint_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(

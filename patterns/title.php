@@ -8,8 +8,10 @@
  */
 
 declare(strict_types=1) ?>
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="margin-top: 0px">
+
+<!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0">
+
     <!-- wp:cover {"url":"","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"minHeightUnit":"px","layout":{"type":"constrained"}} -->
     <div class="wp-block-cover" style="min-height: 169px">
         <span
@@ -21,7 +23,9 @@ declare(strict_types=1) ?>
             <div class="wp-block-group">
                 <!-- wp:post-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
-                <!-- wp:post-excerpt {"placeholder":"Add subtitle…","textColor":"base","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"none"}},"fontSize":"medium"} /-->
+                <!-- wp:paragraph {"placeholder":"Add subtitle…","fontSize":"medium"} -->
+                <p class="has-medium-font-size"></p>
+                <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
         </div>

@@ -8,7 +8,7 @@
 declare(strict_types=1) ?>
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="margin-top: 0px">
-    <!-- wp:cover {"url":,"dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"minHeightUnit":"px","layout":{"type":"constrained"}} -->
+    <!-- wp:cover {"url":"","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"minHeightUnit":"px","layout":{"type":"constrained"}} -->
     <div class="wp-block-cover" style="min-height: 169px">
         <span
             aria-hidden="true"

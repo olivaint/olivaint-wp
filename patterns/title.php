@@ -3,6 +3,8 @@
  * Title: Page Title
  * Slug: olivaint/title
  * Categories: featured, title
+ * Inserter: yes
+ * Sync: false
  */
 
 declare(strict_types=1) ?>
@@ -19,9 +21,7 @@ declare(strict_types=1) ?>
             <div class="wp-block-group">
                 <!-- wp:post-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
-                <!-- wp:paragraph {"placeholder":"Add subtitle…","style":{"typography":{"textTransform":"none","fontStyle":"normal","fontWeight":"500"}},"fontSize":"medium"} -->
-                <p class="has-medium-font-size" style="font-style: normal; font-weight: 500; text-transform: none;"></p>
-                <!-- /wp:paragraph -->
+                <!-- wp:post-excerpt {"placeholder":"Add subtitle…","textColor":"base","style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"none"}},"fontSize":"medium"} /-->
             </div>
             <!-- /wp:group -->
         </div>

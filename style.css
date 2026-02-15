@@ -55,3 +55,15 @@ a {
 .wp-block-pullquote p {
     margin: 0;
 }
+
+/* Force true full-bleed for alignfull cover/group */
+.wp-block-cover.alignfull,
+.wp-block-group.alignfull {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+}

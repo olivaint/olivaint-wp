@@ -9,8 +9,8 @@
 
 declare(strict_types=1) ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="margin-top:0">
+<!-- wp:cover {"useFeaturedImage":true,"dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"align":"full","style":{"spacing":{"margin":{"top":"0"}}}} -->
+<div class="wp-block-cover alignfull" style="min-height:169px;margin-top:0">
 
     <!-- wp:cover {"url":"","dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"minHeightUnit":"px","layout":{"type":"constrained"}} -->
     <div class="wp-block-cover" style="min-height: 169px">

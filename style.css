@@ -67,3 +67,9 @@ a {
     margin-right: -50vw;
     box-sizing: border-box;
 }
+
+.wp-site-blocks > .wp-block-group.alignfull:first-child,
+.wp-site-blocks > .wp-block-cover.alignfull:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}

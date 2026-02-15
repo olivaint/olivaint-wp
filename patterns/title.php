@@ -6,10 +6,9 @@
  */
 
 declare(strict_types=1) ?>
-
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"0"}}}} -->
-<div class="wp-block-group" style="padding-top:0">
-    <!-- wp:cover {"useFeaturedImage":true,"dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"minHeightUnit":"px","layout":{"type":"constrained"}} -->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="margin-top: 0px">
+    <!-- wp:cover {"url":,"dimRatio":60,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":169,"minHeightUnit":"px","layout":{"type":"constrained"}} -->
     <div class="wp-block-cover" style="min-height: 169px">
         <span
             aria-hidden="true"
@@ -20,17 +19,8 @@ declare(strict_types=1) ?>
             <div class="wp-block-group">
                 <!-- wp:post-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
-                <!-- wp:paragraph {"style":{"typography":{"textTransform":"none","fontStyle":"normal","fontWeight":"500"}},"fontSize":"medium"} -->
-                <p
-                    class="has-medium-font-size"
-                    style="
-                        font-style: normal;
-                        font-weight: 500;
-                        text-transform: none;
-                    "
-                >
-                    Subtitle
-                </p>
+                <!-- wp:paragraph {"placeholder":"Add subtitle…","style":{"typography":{"textTransform":"none","fontStyle":"normal","fontWeight":"500"}},"fontSize":"medium"} -->
+                <p class="has-medium-font-size" style="font-style: normal; font-weight: 500; text-transform: none;"></p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->

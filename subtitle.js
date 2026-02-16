@@ -3,26 +3,15 @@
   const registerPlugin = wp.plugins.registerPlugin;
   const PluginDocumentSettingPanel = wp.editPost.PluginDocumentSettingPanel;
   const TextControl = wp.components.TextControl;
-  const useSelect = wp.data.useSelect;
-  const useDispatch = wp.data.useDispatch;
+  const withSelect = wp.data.withSelect;
+  const withDispatch = wp.data.withDispatch;
+  const compose = wp.compose.compose;
 
-  const SubtitlePanel = function () {
-    // Get post type
-    const postType = useSelect(function (select) {
-      return select("core/editor").getCurrentPostType();
-    }, []);
-
+  const SubtitlePanel = function (props) {
     // Only show for pages
-    if (postType !== "page") {
+    if (props.postType !== "page") {
       return null;
     }
-
-    // Get meta
-    const meta = useSelect(function (select) {
-      return select("core/editor").getEditedPostAttribute("meta") || {};
-    }, []);
-
-    const { editPost } = useDispatch("core/editor");
 
     return el(
       PluginDocumentSettingPanel,
@@ -33,15 +22,31 @@
       },
       el(TextControl, {
         label: "Page Subtitle",
-        value: meta.subtitle || "",
+        value: props.meta.subtitle || "",
         onChange: function (value) {
-          editPost({ meta: { subtitle: value } });
+          props.setMeta({ subtitle: value });
         },
       }),
     );
   };
 
+  const SubtitlePanelWithData = compose(
+    withSelect(function (select) {
+      return {
+        postType: select("core/editor").getCurrentPostType(),
+        meta: select("core/editor").getEditedPostAttribute("meta") || {},
+      };
+    }),
+    withDispatch(function (dispatch) {
+      return {
+        setMeta: function (newMeta) {
+          dispatch("core/editor").editPost({ meta: newMeta });
+        },
+      };
+    }),
+  )(SubtitlePanel);
+
   registerPlugin("subtitle-plugin", {
-    render: SubtitlePanel,
+    render: SubtitlePanelWithData,
   });
 })(window.wp);

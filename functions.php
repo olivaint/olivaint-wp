@@ -69,3 +69,13 @@ add_action("init", function () {
 add_action("init", function () {
     register_block_type(__DIR__ . "/blocks/subtitle");
 });
+
+add_action("init", function () {
+    $result = register_block_type(__DIR__ . "/blocks/subtitle");
+    error_log("BLOCK REGISTER RESULT: " . var_export($result, true));
+});
+
+error_log(
+    "BLOCK JSON EXISTS: " .
+        (file_exists(__DIR__ . "/blocks/subtitle/block.json") ? "YES" : "NO"),
+);

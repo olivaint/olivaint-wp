@@ -4,7 +4,7 @@ export default function Edit({ attributes, setAttributes }) {
   return (
     <RichText
       {...useBlockProps()}
-      tagName="p"
+      tagName="h4"
       placeholder="Subtitle"
       value={attributes.content}
       onChange={(content) => setAttributes({ content })}

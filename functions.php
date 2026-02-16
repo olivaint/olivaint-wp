@@ -84,3 +84,12 @@ error_log(
     "BLOCK JSON EXISTS: " .
         (file_exists(__DIR__ . "/blocks/subtitle/block.json") ? "YES" : "NO"),
 );
+
+add_action("enqueue_block_editor_assets", function () {
+    wp_enqueue_script(
+        "olivaint-subtitle-deps",
+        get_template_directory_uri() . "/blocks/subtitle/index.js",
+        ["wp-blocks", "wp-element", "wp-block-editor"],
+        filemtime(get_template_directory() . "/blocks/subtitle/index.js"),
+    );
+});

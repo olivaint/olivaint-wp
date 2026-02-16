@@ -68,6 +68,7 @@ a {
     box-sizing: border-box;
 }
 
-.wp-block-group.alignfull > .wp-block-cover {
+.wp-block-template-part:has(> .wp-block-group.alignfull) {
     margin-top: 0 !important;
+    padding-top: 0 !important;
 }

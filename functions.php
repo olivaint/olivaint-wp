@@ -54,35 +54,3 @@ if (!function_exists("olivaint_styles")):
 endif;
 
 add_action("wp_enqueue_scripts", "olivaint_styles");
-
-function my_register_page_subtitle_meta()
-{
-    register_post_meta("page", "subtitle", [
-        "show_in_rest" => true,
-        "single" => true,
-        "type" => "string",
-        "auth_callback" => function () {
-            return current_user_can("edit_posts");
-        },
-    ]);
-}
-add_action("init", "my_register_page_subtitle_meta");
-
-function my_enqueue_subtitle_editor_assets()
-{
-    wp_enqueue_script(
-        "my-subtitle-editor",
-        get_template_directory_uri() . "/subtitle.js",
-        [
-            "wp-plugins",
-            "wp-edit-post",
-            "wp-element",
-            "wp-components",
-            "wp-data",
-            "wp-compose",
-        ],
-        filemtime(get_template_directory() . "/subtitle.js"),
-        true,
-    );
-}
-add_action("enqueue_block_editor_assets", "my_enqueue_subtitle_editor_assets");

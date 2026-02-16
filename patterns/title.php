@@ -25,7 +25,6 @@ declare(strict_types=1) ?>
         <?php do_action("plugins/wp_subtitle/the_subtitle", [
             "before" => '<p class="has-medium-font-size">',
             "after" => "</p>",
-            "post_id" => get_the_ID(),
             "default_value" => "",
         ]); ?>
         <!-- /wp:paragraph -->

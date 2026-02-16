@@ -67,3 +67,7 @@ a {
     margin-right: -50vw;
     box-sizing: border-box;
 }
+
+.wp-block-group.alignfull > .wp-block-cover {
+    margin-top: 0 !important;
+}

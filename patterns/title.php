@@ -22,11 +22,7 @@ declare(strict_types=1) ?>
         <!-- wp:post-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
         <!-- wp:paragraph {"fontSize":"medium", "placeholder":"Automatic subtitle"} -->
-        <?php do_action("plugins/wp_subtitle/the_subtitle", [
-            "before" => '<p class="has-medium-font-size">',
-            "after" => "</p>",
-            "default_value" => "",
-        ]); ?>
+        <?php the_subtitle('<p class="has-medium-font-size">', "</p>"); ?>
         <!-- /wp:paragraph -->
 
       </div>

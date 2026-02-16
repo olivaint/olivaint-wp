@@ -74,13 +74,15 @@ function my_enqueue_subtitle_editor_assets()
         "my-subtitle-editor",
         get_template_directory_uri() . "/subtitle.js",
         [
+            "wp-plugins",
             "wp-edit-post",
             "wp-element",
             "wp-components",
             "wp-data",
-            "wp-plugins",
+            "wp-compose",
         ],
         filemtime(get_template_directory() . "/subtitle.js"),
+        true,
     );
 }
 add_action("enqueue_block_editor_assets", "my_enqueue_subtitle_editor_assets");

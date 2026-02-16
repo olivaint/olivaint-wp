@@ -11,6 +11,5 @@
       "meta": "subtitle"
     }
   },
-  "editorScript": "file:./index.js",
   "render": "file:./render.php"
 }

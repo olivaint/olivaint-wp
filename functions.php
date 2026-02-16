@@ -54,3 +54,14 @@ if (!function_exists("olivaint_styles")):
 endif;
 
 add_action("wp_enqueue_scripts", "olivaint_styles");
+
+add_action("init", function () {
+    register_post_meta("page", "subtitle", [
+        "show_in_rest" => true,
+        "single" => true,
+        "type" => "string",
+        "auth_callback" => function () {
+            return current_user_can("edit_posts");
+        },
+    ]);
+});

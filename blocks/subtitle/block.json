@@ -1,0 +1,16 @@
+{
+  "apiVersion": 2,
+  "name": "olivaint/subtitle",
+  "title": "Subtitle",
+  "category": "text",
+  "icon": "editor-textcolor",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "meta",
+      "meta": "subtitle"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

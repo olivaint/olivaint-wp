@@ -56,10 +56,10 @@ endif;
 add_action("wp_enqueue_scripts", "olivaint_styles");
 
 add_action("init", function () {
-    register_post_meta("page", "subtitle", [
-        "show_in_rest" => true,
-        "single" => true,
+    register_post_meta("", "subtitle", [
         "type" => "string",
+        "single" => true,
+        "show_in_rest" => true,
         "auth_callback" => function () {
             return current_user_can("edit_posts");
         },

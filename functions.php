@@ -72,7 +72,7 @@ function my_enqueue_subtitle_editor_assets()
 {
     wp_enqueue_script(
         "my-subtitle-editor",
-        get_template_directory_uri() . "/editor-subtitle.js",
+        get_template_directory_uri() . "/subtitle.js",
         [
             "wp-edit-post",
             "wp-element",
@@ -80,7 +80,7 @@ function my_enqueue_subtitle_editor_assets()
             "wp-data",
             "wp-plugins",
         ],
-        filemtime(get_template_directory() . "/editor-subtitle.js"),
+        filemtime(get_template_directory() . "/subtitle.js"),
     );
 }
 add_action("enqueue_block_editor_assets", "my_enqueue_subtitle_editor_assets");

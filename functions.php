@@ -55,43 +55,32 @@ endif;
 
 add_action("wp_enqueue_scripts", "olivaint_styles");
 
-add_action("init", function () {
-    register_post_meta("", "subtitle", [
-        "type" => "string",
-        "single" => true,
+function my_register_page_subtitle_meta()
+{
+    register_post_meta("page", "subtitle", [
         "show_in_rest" => true,
+        "single" => true,
+        "type" => "string",
         "auth_callback" => function () {
             return current_user_can("edit_posts");
         },
     ]);
-});
+}
+add_action("init", "my_register_page_subtitle_meta");
 
-add_action("init", function () {
-    register_block_type(__DIR__ . "/blocks/subtitle");
-});
-
-add_action("init", function () {
-    $result = register_block_type(__DIR__ . "/blocks/subtitle");
-    error_log("BLOCK REGISTER RESULT: " . var_export($result, true));
-});
-
-error_log(
-    "BLOCK JSON EXISTS: " .
-        (file_exists(__DIR__ . "/blocks/subtitle/block.json") ? "YES" : "NO"),
-);
-
-add_action("enqueue_block_editor_assets", function () {
+function my_enqueue_subtitle_editor_assets()
+{
     wp_enqueue_script(
-        "olivaint-subtitle-deps",
-        get_template_directory_uri() . "/blocks/subtitle/index.js",
-        ["wp-blocks", "wp-element", "wp-block-editor"],
-        filemtime(get_template_directory() . "/blocks/subtitle/index.js"),
+        "my-subtitle-editor",
+        get_template_directory_uri() . "/editor-subtitle.js",
+        [
+            "wp-edit-post",
+            "wp-element",
+            "wp-components",
+            "wp-data",
+            "wp-plugins",
+        ],
+        filemtime(get_template_directory() . "/editor-subtitle.js"),
     );
-});
-
-add_action("after_setup_theme", function () {
-    add_theme_support("block-templates");
-    add_theme_support("block-template-parts");
-    add_theme_support("editor-styles");
-    add_theme_support("wp-block-styles");
-});
+}
+add_action("enqueue_block_editor_assets", "my_enqueue_subtitle_editor_assets");

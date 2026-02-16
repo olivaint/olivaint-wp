@@ -14,7 +14,7 @@
       });
     },
     save: function () {
-      return null; // dynamic block, rendered via render.php
+      return null;
     },
   });
 })(window.wp.blocks, window.wp.element, window.wp.blockEditor);

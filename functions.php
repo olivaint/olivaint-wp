@@ -70,11 +70,6 @@ add_action("init", function () {
     register_block_type(__DIR__ . "/blocks/subtitle");
 });
 
-add_action("after_setup_theme", function () {
-    add_theme_support("block-templates");
-    add_theme_support("block-template-parts");
-});
-
 add_action("init", function () {
     $result = register_block_type(__DIR__ . "/blocks/subtitle");
     error_log("BLOCK REGISTER RESULT: " . var_export($result, true));
@@ -92,4 +87,11 @@ add_action("enqueue_block_editor_assets", function () {
         ["wp-blocks", "wp-element", "wp-block-editor"],
         filemtime(get_template_directory() . "/blocks/subtitle/index.js"),
     );
+});
+
+add_action("after_setup_theme", function () {
+    add_theme_support("block-templates");
+    add_theme_support("block-template-parts");
+    add_theme_support("editor-styles");
+    add_theme_support("wp-block-styles");
 });

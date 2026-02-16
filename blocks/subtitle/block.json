@@ -11,6 +11,9 @@
       "meta": "subtitle"
     }
   },
-  "editorScript": "file:./index.js",
+  "editorScript": {
+    "file": "./index.js",
+    "dependencies": ["wp-blocks", "wp-element", "wp-block-editor"]
+  },
   "render": "file:./render.php"
 }

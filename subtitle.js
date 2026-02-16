@@ -1,35 +1,45 @@
-const { registerPlugin } = wp.plugins;
-const { PluginDocumentSettingPanel } = wp.editPost;
-const { TextControl } = wp.components;
-const { useSelect, useDispatch } = wp.data;
+(function (wp) {
+  const el = wp.element.createElement;
+  const registerPlugin = wp.plugins.registerPlugin;
+  const PluginDocumentSettingPanel = wp.editPost.PluginDocumentSettingPanel;
+  const TextControl = wp.components.TextControl;
+  const useSelect = wp.data.useSelect;
+  const useDispatch = wp.data.useDispatch;
 
-const SubtitlePanel = () => {
-  const postType = wp.data.useSelect((select) =>
-    select("core/editor").getCurrentPostType(),
-  );
+  const SubtitlePanel = function () {
+    const postType = useSelect(function (select) {
+      return select("core/editor").getCurrentPostType();
+    }, []);
 
-  // Only show for pages
-  if (postType !== "page") return null;
+    // Only show for pages
+    if (postType !== "page") {
+      return null;
+    }
 
-  const meta = useSelect((select) =>
-    select("core/editor").getEditedPostAttribute("meta"),
-  );
+    const meta = useSelect(function (select) {
+      return select("core/editor").getEditedPostAttribute("meta");
+    }, []);
 
-  const { editPost } = useDispatch("core/editor");
+    const editPost = useDispatch("core/editor").editPost;
 
-  return (
-    <PluginDocumentSettingPanel
-      name="subtitle-panel"
-      title="Subtitle"
-      className="subtitle-panel"
-    >
-      <TextControl
-        label="Page Subtitle"
-        value={meta.subtitle || ""}
-        onChange={(value) => editPost({ meta: { subtitle: value } })}
-      />
-    </PluginDocumentSettingPanel>
-  );
-};
+    return el(
+      PluginDocumentSettingPanel,
+      {
+        name: "subtitle-panel",
+        title: "Subtitle",
+        className: "subtitle-panel",
+      },
+      el(TextControl, {
+        label: "Page Subtitle",
+        value: (meta && meta.subtitle) || "",
+        onChange: function (value) {
+          editPost({ meta: { subtitle: value } });
+        },
+      }),
+    );
+  };
 
-registerPlugin("subtitle-plugin", { render: SubtitlePanel });
+  registerPlugin("subtitle-plugin", {
+    render: SubtitlePanel,
+  });
+})(window.wp);

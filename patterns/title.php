@@ -21,7 +21,7 @@ declare(strict_types=1) ?>
       <div class="wp-block-group">
         <!-- wp:post-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
-        <!-- wp:olivaint/subtitle /-->
+        <!-- wp:post-meta {"metaKey":"subtitle"} /-->
       </div>
       <!-- /wp:group -->
     </div>

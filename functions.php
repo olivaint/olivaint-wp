@@ -65,3 +65,7 @@ add_action("init", function () {
         },
     ]);
 });
+
+add_action("init", function () {
+    register_block_type(__DIR__ . "/blocks/subtitle");
+});

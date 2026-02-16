@@ -1,27 +1,26 @@
 (function (wp) {
   const el = wp.element.createElement;
   const registerPlugin = wp.plugins.registerPlugin;
-  const PluginDocumentSettingPanel = wp.editPost.PluginDocumentSettingPanel;
+  const PluginSidebar = wp.editPost.PluginSidebar;
   const TextControl = wp.components.TextControl;
   const withSelect = wp.data.withSelect;
   const withDispatch = wp.data.withDispatch;
   const compose = wp.compose.compose;
 
-  const SubtitlePanel = function (props) {
-    // Only show for pages
+  const SubtitleSidebar = function (props) {
     if (props.postType !== "page") {
       return null;
     }
 
     return el(
-      PluginDocumentSettingPanel,
+      PluginSidebar,
       {
-        name: "subtitle-panel",
-        title: "Subtitle",
-        className: "subtitle-panel",
+        name: "subtitle-sidebar",
+        title: "Page Subtitle",
+        icon: "edit",
       },
       el(TextControl, {
-        label: "Page Subtitle",
+        label: "Subtitle",
         value: props.meta.subtitle || "",
         onChange: function (value) {
           props.setMeta({ subtitle: value });
@@ -30,7 +29,7 @@
     );
   };
 
-  const SubtitlePanelWithData = compose(
+  const SubtitleSidebarWithData = compose(
     withSelect(function (select) {
       return {
         postType: select("core/editor").getCurrentPostType(),
@@ -44,9 +43,9 @@
         },
       };
     }),
-  )(SubtitlePanel);
+  )(SubtitleSidebar);
 
   registerPlugin("subtitle-plugin", {
-    render: SubtitlePanelWithData,
+    render: SubtitleSidebarWithData,
   });
 })(window.wp);

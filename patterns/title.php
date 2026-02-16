@@ -21,12 +21,14 @@ declare(strict_types=1) ?>
       <div class="wp-block-group">
         <!-- wp:post-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
+        <!-- wp:paragraph {"fontSize":"medium"} -->
         <?php do_action("plugins/wp_subtitle/the_subtitle", [
-            "before" => '<p class="subtitle">',
+            "before" => '<p class="has-medium-font-size">',
             "after" => "</p>",
             "post_id" => get_the_ID(),
             "default_value" => "",
         ]); ?>
+        <!-- /wp:paragraph -->
 
       </div>
       <!-- /wp:group -->

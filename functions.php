@@ -8,54 +8,89 @@
  * @since Olivaint 1.1
  */
 
-declare( strict_types = 1 );
+declare(strict_types=1);
 
-if ( ! function_exists( 'olivaint_support' ) ) :
+if (!function_exists("olivaint_support")):
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * @since Olivaint 1.1
+     *
+     * @return void
+     */
+    function olivaint_support()
+    {
+        // Enqueue editor styles.
+        add_editor_style("style.css");
 
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * @since Olivaint 1.1
-	 *
-	 * @return void
-	 */
-	function olivaint_support() {
-
-		// Enqueue editor styles.
-		add_editor_style( 'style.css' );
-
-		// Make theme available for translation.
-		load_theme_textdomain( 'olivaint' );
-	}
-
+        // Make theme available for translation.
+        load_theme_textdomain("olivaint");
+    }
 endif;
 
-add_action( 'after_setup_theme', 'olivaint_support' );
+add_action("after_setup_theme", "olivaint_support");
 
-if ( ! function_exists( 'olivaint_styles' ) ) :
+if (!function_exists("olivaint_styles")):
+    /**
+     * Enqueue styles.
+     *
+     * @since Olivaint 1.1
+     *
+     * @return void
+     */
+    function olivaint_styles()
+    {
+        // Register theme stylesheet.
+        wp_register_style(
+            "olivaint-style",
+            get_stylesheet_directory_uri() . "/style.css",
+            [],
+            wp_get_theme()->get("Version"),
+        );
 
-	/**
-	 * Enqueue styles.
-	 *
-	 * @since Olivaint 1.1
-	 *
-	 * @return void
-	 */
-	function olivaint_styles() {
-
-		// Register theme stylesheet.
-		wp_register_style(
-			'olivaint-style',
-			get_stylesheet_directory_uri() . '/style.css',
-			array(),
-			wp_get_theme()->get( 'Version' )
-		);
-
-		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'olivaint-style' );
-
-	}
-
+        // Enqueue theme stylesheet.
+        wp_enqueue_style("olivaint-style");
+    }
 endif;
 
-add_action( 'wp_enqueue_scripts', 'olivaint_styles' );
+add_action("wp_enqueue_scripts", "olivaint_styles");
+
+if (!function_exists("olivaint_register_subtitle_meta")):
+    /**
+     * Register custom subtitle post meta.
+     *
+     * @since Olivaint 1.1
+     *
+     * @return void
+     */
+    function olivaint_register_subtitle_meta()
+    {
+        register_post_meta("page", "olivaint_subtitle", [
+            "type" => "string",
+            "single" => true,
+            "show_in_rest" => true,
+            "sanitize_callback" => "sanitize_text_field",
+            "auth_callback" => function () {
+                return current_user_can("edit_posts");
+            },
+        ]);
+    }
+endif;
+
+add_action("init", "olivaint_register_subtitle_meta");
+
+if (!function_exists("olivaint_register_blocks")):
+    /**
+     * Register custom blocks.
+     *
+     * @since Olivaint 1.1
+     *
+     * @return void
+     */
+    function olivaint_register_blocks()
+    {
+        register_block_type(get_template_directory() . "/blocks/subtitle");
+    }
+endif;
+
+add_action("init", "olivaint_register_blocks");

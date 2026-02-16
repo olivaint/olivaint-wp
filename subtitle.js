@@ -7,6 +7,7 @@
   const useDispatch = wp.data.useDispatch;
 
   const SubtitlePanel = function () {
+    // Get post type
     const postType = useSelect(function (select) {
       return select("core/editor").getCurrentPostType();
     }, []);
@@ -16,11 +17,12 @@
       return null;
     }
 
+    // Get meta
     const meta = useSelect(function (select) {
-      return select("core/editor").getEditedPostAttribute("meta");
+      return select("core/editor").getEditedPostAttribute("meta") || {};
     }, []);
 
-    const editPost = useDispatch("core/editor").editPost;
+    const { editPost } = useDispatch("core/editor");
 
     return el(
       PluginDocumentSettingPanel,
@@ -31,7 +33,7 @@
       },
       el(TextControl, {
         label: "Page Subtitle",
-        value: (meta && meta.subtitle) || "",
+        value: meta.subtitle || "",
         onChange: function (value) {
           editPost({ meta: { subtitle: value } });
         },

@@ -72,3 +72,9 @@ a {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+.lang-item {
+    display: inline;
+    padding-left: 5px;
+    list-style: none;
+}

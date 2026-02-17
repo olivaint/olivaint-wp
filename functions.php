@@ -55,9 +55,14 @@ endif;
 
 add_action("wp_enqueue_scripts", "olivaint_styles");
 
-/* Add polylang swicher shortcode */
-
-function polylang_langswitch()
+/**
+ * Polylang Shortcode - https://wordpress.org/plugins/polylang/
+ * Add this code in your functions.php
+ * Put shortcode [polylang_langswitcher] to post/page for display flags
+ *
+ * @return string
+ */
+function custom_polylang_langswitcher()
 {
     $output = "";
     if (function_exists("pll_the_languages")) {
@@ -71,7 +76,8 @@ function polylang_langswitch()
             pll_the_languages($args) .
             "</ul>";
     }
-    return $outpt;
+
+    return $output;
 }
 
-add_shortcode("polylang", "polylang_langswitch");
+add_shortcode("polylang_langswitcher", "custom_polylang_langswitcher");

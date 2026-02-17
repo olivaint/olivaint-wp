@@ -54,3 +54,24 @@ if (!function_exists("olivaint_styles")):
 endif;
 
 add_action("wp_enqueue_scripts", "olivaint_styles");
+
+/* Add polylang swicher shortcode */
+
+function polylang_langswitch()
+{
+    $output = "";
+    if (function_exists("pll_the_languages")) {
+        $args = [
+            "show_flags" => 0,
+            "show_names" => 1,
+            "echo" => 0,
+        ];
+        $output =
+            '<ul class="polylang_langswitcher">' .
+            pll_the_languages($args) .
+            "</ul>";
+    }
+    return $outpt;
+}
+
+add_shortcode("polylang", "polylang_langswitch");

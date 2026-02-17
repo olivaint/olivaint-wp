@@ -70,6 +70,7 @@ function custom_polylang_langswitcher()
             "show_flags" => 0,
             "show_names" => 1,
             "echo" => 0,
+            "dropdown" => 1,
         ];
         $output =
             '<ul class="polylang_langswitcher">' .

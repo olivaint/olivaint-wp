@@ -1070,6 +1070,13 @@
       "title": "Post Terms"
     }
   ],
+  "customTemplates": [
+    {
+      "name": "homepage",
+      "title": "Homepage Layout",
+      "postTypes": ["page"]
+    }
+  ]
   "version": 2,
   "$schema": "https://schemas.wp.org/trunk/theme.json"
 }
